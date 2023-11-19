@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: rental-car-gateway
+  cloud:
+    gateway:
+      routes:
+      - id: users
+        uri: http://localhost:8080/api/users
+        predicates:
+        - Path=/users/
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
